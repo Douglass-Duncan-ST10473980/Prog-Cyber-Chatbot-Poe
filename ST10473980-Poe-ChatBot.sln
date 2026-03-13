@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ST10473980-Poe-ChatBot", "ST10473980-Poe-ChatBot\ST10473980-Poe-ChatBot.csproj", "{D019F573-7C20-472B-8BAD-C0618E780617}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D019F573-7C20-472B-8BAD-C0618E780617}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D019F573-7C20-472B-8BAD-C0618E780617}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D019F573-7C20-472B-8BAD-C0618E780617}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D019F573-7C20-472B-8BAD-C0618E780617}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
