@@ -10,4 +10,14 @@ public class User
         _name = name;
         _surname = surname;
     }
+
+    public string GetName()
+    {
+        return _name;
+    }
+
+    public string GetSurname()
+    {
+        return _surname;
+    }
 }
