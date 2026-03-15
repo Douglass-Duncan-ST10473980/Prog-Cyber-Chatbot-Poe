@@ -9,7 +9,8 @@ public class Chatbot
 
     private void runProgram()
     {
-        TextFileLoader _loader = new TextFileLoader("Data/Txts/Logo.txt");
+        TextFileLoader loader = new TextFileLoader("Data/Txts/Logo.txt");
+        loader.DisplayFile();
         
         
         Console.Write("Bot>> ");
