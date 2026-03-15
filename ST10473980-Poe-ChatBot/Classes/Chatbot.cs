@@ -6,6 +6,8 @@ public class Chatbot(int textDelay)
     private ResponseSystem ResponseSystem { get; set; } = null!;
     private User User { get; set; } = null!;
 
+    private VoiceIntro voiceintro=new VoiceIntro();
+
 
     private bool StartFlag { get; set; }
 
@@ -13,6 +15,8 @@ public class Chatbot(int textDelay)
     {
         //start animation
         _visualElements.Start();
+
+        voiceintro.PlaySound();
         
         //display logo
         Console.ForegroundColor = ConsoleColor.Cyan;

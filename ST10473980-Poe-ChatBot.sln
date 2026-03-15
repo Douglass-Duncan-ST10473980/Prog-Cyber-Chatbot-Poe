@@ -1,8 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.2.11430.68 d18.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ST10473980-Poe-ChatBot", "ST10473980-Poe-ChatBot\ST10473980-Poe-ChatBot.csproj", "{D019F573-7C20-472B-8BAD-C0618E780617}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCode", "TestCode\TestCode.csproj", "{175048FF-21F4-4B47-B154-BDB6133EDDE8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,9 +15,8 @@ Global
 		{D019F573-7C20-472B-8BAD-C0618E780617}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D019F573-7C20-472B-8BAD-C0618E780617}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D019F573-7C20-472B-8BAD-C0618E780617}.Release|Any CPU.Build.0 = Release|Any CPU
-		{175048FF-21F4-4B47-B154-BDB6133EDDE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{175048FF-21F4-4B47-B154-BDB6133EDDE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{175048FF-21F4-4B47-B154-BDB6133EDDE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{175048FF-21F4-4B47-B154-BDB6133EDDE8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
