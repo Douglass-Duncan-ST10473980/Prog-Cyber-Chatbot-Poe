@@ -9,7 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <None Update="Data\Logo.txt">
+      <None Update="Data\Txts\Logo.txt">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
     </ItemGroup>
