@@ -58,6 +58,17 @@ public class ResponseSystem
             }
         }
 
-        return string.Empty;
+        return "Invalid entry:" +
+               "\n\n      You can ask me about cyber safety topics." +
+               "\n\n      Available topics:" +
+               "\n      - Phishing" +
+               "\n      - Password safety" +
+               "\n      - Safe browsing" +
+               "\n\n      You can ask:" +
+               "\n      - what is phishing" +
+               "\n      - how to avoid phishing" +
+               "\n      - what is password safety" +
+               "\n      - how to browse safely" +
+               "\n\n      Type 'exit' to close the chatbot.";
     }
 }

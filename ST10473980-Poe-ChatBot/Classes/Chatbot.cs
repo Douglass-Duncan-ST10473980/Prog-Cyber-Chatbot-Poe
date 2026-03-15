@@ -1,45 +1,43 @@
 namespace ST10473980_Poe_ChatBot.Classes;
 
-public class Chatbot
+public class Chatbot(int textDelay)
 {
     private readonly VisualElements _visualElements= new VisualElements();
     private ResponseSystem ResponseSystem { get; set; } = null!;
     private User User { get; set; } = null!;
 
-    private int textDelay;
 
-    public Chatbot(int textDelay)
-    {
-        this.textDelay = textDelay;
-    }
-
-
-    private bool _start { get; set; }
+    private bool StartFlag { get; set; }
 
     private void RunProgram()
     {
+        //start animation
+        _visualElements.Start();
+        
+        //display logo
         Console.ForegroundColor = ConsoleColor.Cyan;
         TextFileLoader loader = new TextFileLoader("Data/Txts/Logo.txt");
         loader.DisplayFile();
         Console.WriteLine();
+        Console.ResetColor();
         
-        
+        //welcome label
         Console.WriteLine("+----------------------------------------+");
         Console.WriteLine("|                WELCOME                 |");
         Console.WriteLine("+----------------------------------------+");
         
-        Console.ResetColor();
         
-        Console.Write($"\nBOT>>");
-        _visualElements.TypeText($" Please enter your name and surname: ",50);
-        Console.Write("Name: ");
+        //sets user
+        _visualElements.BotLabel($"\nBOT>>");
+        _visualElements.BotMessage($" Please enter your name and surname: ",textDelay);
+        _visualElements.UserLabel($"Name: ");
         string? name = Console.ReadLine();
-        Console.Write("Surname: ");
+        _visualElements.UserLabel($"Surname: ");
         string? surname = Console.ReadLine();
         
         
        
-
+        //if user is empty re sets ueser
         while (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(surname))
         {
             
@@ -58,37 +56,42 @@ public class Chatbot
         
         Console.WriteLine($"-------------------------------------------\n");
         
-        Console.Write("BOT>> ");
-        _visualElements.TypeText($"Welcome {User.GetName()} {User.GetSurname()}.\n" +
+        //welcomes user
+        _visualElements.BotLabel($"BOT>> ");
+        _visualElements.BotMessage($"Welcome {User.GetName()} {User.GetSurname()}.\n" +
                                  $"      How can I assist you today?\n",textDelay);
 
-        while (_start)
+        //starts chat bot logic
+        while (StartFlag)
         {
-           Console.Write($"{User.GetName()}>> ");
-           string? input = Console.ReadLine().ToLower();
+           _visualElements.UserLabel($"{User.GetName()}>> ");
+           string? input = Console.ReadLine()?.ToLower();
            Console.WriteLine();
            
-           Console.Write($"BOT>> ");
-           if (input != null) _visualElements.TypeText(ResponseSystem.GetResponse(input), 20);
-           Console.WriteLine();
-
-           if (input != null && (input.Contains("good bye") || input.Contains("exit")))
+           _visualElements.BotLabel($"BOT>> ");
+           
+           if (input != null)
            {
-               Stop();
+               _visualElements.BotMessage(ResponseSystem.GetResponse(input), textDelay);
+               Console.WriteLine();
+
+               if ((input.Contains("good bye") || input.Contains("exit")))
+               {
+                   Stop();
+               }
            }
-           
         }
     }
     
     public void Start()
     {
-        _start = true;
+        StartFlag = true;
         RunProgram();
     }
 
     private void Stop()
     {
-        _start = false;
+        StartFlag = false;
         _visualElements.Stop();
         Console.WriteLine($"-------------------------------------------\n");
     }
