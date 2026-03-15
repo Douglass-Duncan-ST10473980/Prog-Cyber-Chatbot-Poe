@@ -1,3 +1,94 @@
 {
-  
+  "general": [
+    {
+      "keywords": ["hello", "hi", "hey"],
+      "response": "Hello {name} {surname}, How can I assist you today?"
+    },
+    {
+      "keywords": ["how are you", "what's up", "whats up", "how is it going"],
+      "response": "I'm doing great, {name}! \n      How are you today?"
+    },
+    {
+      "keywords": ["i'm good", "i'm great"],
+      "response": "That's great to hear! \n      How may I help you today?"
+    },
+    {
+      "keywords": ["i'm not good", "i'm not great"],
+      "response": "That's not good to hear {name}! \n      Hopefully my knowledge can improve your day. What can I help you with?"
+    },
+
+
+
+    {
+      "keywords": ["help", "help me", "menu", "commands", "what can i do"],
+      "response": "You can ask me about cyber safety topics.\n\n      Available topics:\n      - Phishing\n      - Password safety\n      - Safe browsing\n\n      You can ask:\n      - what is phishing\n      - how to avoid phishing\n      - what is password safety\n      - how to browse safely\n\n      Type 'exit' to close the chatbot."
+    },
+    {
+      "keywords": ["what can i ask about", "topics", "show topics"],
+      "response": "I have various topics like:\n      - Password safety\n      - Phishing\n      - Safe browsing\n\nType help to see more options."
+    },
+    {
+      "keywords": ["how to use", "how do i use this", "how does this work"],
+      "response": "You can type questions about online safety.\nExample:\n      what is phishing\n      how to protect password\n      safe browsing tips\n\nType help anytime to see commands."
+    },
+
+
+
+    {
+      "keywords": ["whats your purpose", "what can you do"],
+      "response": "I'm here to teach you about staying safe online"
+    },
+
+
+
+    {
+      "keywords": ["what is phishing", "phishing attack"],
+      "response": "Phishing is a cyber attack where criminals try to trick you into giving personal information using fake emails, messages, or websites."
+    },
+    {
+      "keywords": ["how to avoid phishing", "how to protect from phishing", "phishing protection"],
+      "response": "To protect yourself from phishing:\n      - Do not click suspicious links\n      - Check the sender email\n      - Never share passwords\n      - Use two factor authentication"
+    },
+    {
+      "keywords": ["phishing reading", "learn more phishing"],
+      "response": "Further reading on phishing:\n      https://www.cisa.gov/phishing\n      https://consumer.ftc.gov/articles/how-recognize-and-avoid-phishing-scams"
+    },
+
+
+
+    {
+      "keywords": ["what is password safety", "password safety", "strong password"],
+      "response": "Password safety means using strong and secure passwords to protect your accounts from hackers."
+    },
+    {
+      "keywords": ["how to make strong password", "how to protect password", "password protection"],
+      "response": "To stay safe with passwords:\n      - Use long passwords\n      - Use numbers and symbols\n      - Do not reuse passwords\n      - Do not share passwords"
+    },
+    {
+      "keywords": ["password safety help", "password safety reading", "learn more password"],
+      "response": "Further reading on password safety:\n      https://www.cisa.gov/secure-our-world/use-strong-passwords\n      https://www.ncsc.gov.uk/guidance/passwords"
+    },
+
+
+
+    {
+      "keywords": ["what is safe browsing", "safe browsing", "secure browsing"],
+      "response": "Safe browsing means using the internet in a way that protects your personal information and prevents viruses or scams."
+    },
+    {
+      "keywords": ["how to browse safely", "safe browsing tips", "protect while browsing"],
+      "response": "To browse safely:\n      - Only visit trusted websites\n      - Check for https\n      - Do not download unknown files\n      - Keep your antivirus updated"
+    },
+    {
+      "keywords": ["safe browsing help", "safe browsing reading", "learn more browsing"],
+      "response": "Further reading on safe browsing:\n      https://staysafeonline.org\n      https://www.cisa.gov/secure-our-world"
+    },
+
+
+
+    {
+      "keywords": ["exit", "good bye", "bye"],
+      "response": "Good bye, {name} {surname}!\n      It was nice chatting to you,\n      I hope I could provide you with some knowledge on online safety"
+    }
+  ]
 }

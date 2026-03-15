@@ -11,4 +11,28 @@ public class VisualElements
         }
         Console.WriteLine();
     }
+
+    public void Stop()
+    {
+        Console.Write("Cyber Chat Bot is shutting down");
+
+        for (int i = 0; i < 4; i++)
+        {
+            Console.Write(".");
+            Thread.Sleep(400);
+        }
+        Console.WriteLine();
+    }
+    
+    public void Start()
+    {
+        Console.Write("Cyber Chat Bot is starting up");
+
+        for (int i = 0; i < 4; i++)
+        {
+            Console.Write(".");
+            Thread.Sleep(400);
+        }
+        Console.WriteLine();
+    }
 }

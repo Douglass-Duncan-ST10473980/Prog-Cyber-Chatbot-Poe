@@ -3,10 +3,11 @@ namespace ST10473980_Poe_ChatBot.Classes;
 public class Chatbot
 {
     private readonly VisualElements _visualElements= new VisualElements();
-    private User _user;
-     
-    
-    private bool start = false;
+    private ResponseSystem ResponseSystem { get; set; } = null!;
+    private User User { get; set; } = null!;
+
+
+    private bool _start { get; set; }
 
     private void RunProgram()
     {
@@ -39,28 +40,43 @@ public class Chatbot
             surname = Console.ReadLine();
         }
         
-        _user= new User(name, surname);
+        User= new User(name, surname);
+        ResponseSystem = new ResponseSystem(User);
         
         Console.WriteLine($"-------------------------------------------\n");
         
         Console.Write("BOT>> ");
-        _visualElements.TypeText($"Welcome {_user.GetName()} {_user.GetSurname()}.\n" +
-                                 $"      How can I assist you today",20);
+        _visualElements.TypeText($"Welcome {User.GetName()} {User.GetSurname()}.\n" +
+                                 $"      How can I assist you today?\n",20);
 
-        while (start)
+        while (_start)
         {
-            
+           Console.Write($"{User.GetName()}>> ");
+           string? input = Console.ReadLine().ToLower();
+           Console.WriteLine();
+           
+           Console.Write($"BOT>> ");
+           if (input != null) _visualElements.TypeText(ResponseSystem.GetResponse(input), 20);
+           Console.WriteLine();
+
+           if (input != null && (input.Contains("good bye") || input.Contains("exit")))
+           {
+               Stop();
+           }
+           
         }
     }
     
     public void Start()
     {
-        start = true;
+        _start = true;
         RunProgram();
     }
 
     private void Stop()
     {
-        start = false;
+        _start = false;
+        _visualElements.Stop();
+        Console.WriteLine($"-------------------------------------------\n");
     }
 }
