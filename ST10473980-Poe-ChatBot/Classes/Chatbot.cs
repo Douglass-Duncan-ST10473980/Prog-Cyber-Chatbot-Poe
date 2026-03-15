@@ -6,18 +6,29 @@ public class Chatbot
     private ResponseSystem ResponseSystem { get; set; } = null!;
     private User User { get; set; } = null!;
 
+    private int textDelay;
+
+    public Chatbot(int textDelay)
+    {
+        this.textDelay = textDelay;
+    }
+
 
     private bool _start { get; set; }
 
     private void RunProgram()
     {
+        Console.ForegroundColor = ConsoleColor.Cyan;
         TextFileLoader loader = new TextFileLoader("Data/Txts/Logo.txt");
         loader.DisplayFile();
         Console.WriteLine();
         
+        
         Console.WriteLine("+----------------------------------------+");
         Console.WriteLine("|                WELCOME                 |");
         Console.WriteLine("+----------------------------------------+");
+        
+        Console.ResetColor();
         
         Console.Write($"\nBOT>>");
         _visualElements.TypeText($" Please enter your name and surname: ",50);
@@ -25,13 +36,15 @@ public class Chatbot
         string? name = Console.ReadLine();
         Console.Write("Surname: ");
         string? surname = Console.ReadLine();
+        
+        
        
 
         while (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(surname))
         {
             
             Console.Write($"BOT>>");
-            _visualElements.TypeText($" Name and surname cannot be empty.",50);
+            _visualElements.ErrorText($" Name and surname cannot be empty.",textDelay);
 
             Console.Write($"Name: ");
             name = Console.ReadLine();
@@ -47,7 +60,7 @@ public class Chatbot
         
         Console.Write("BOT>> ");
         _visualElements.TypeText($"Welcome {User.GetName()} {User.GetSurname()}.\n" +
-                                 $"      How can I assist you today?\n",20);
+                                 $"      How can I assist you today?\n",textDelay);
 
         while (_start)
         {

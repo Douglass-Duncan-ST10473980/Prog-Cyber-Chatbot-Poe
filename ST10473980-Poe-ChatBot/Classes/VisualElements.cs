@@ -35,4 +35,11 @@ public class VisualElements
         }
         Console.WriteLine();
     }
+
+    public void ErrorText(string text, int delay)
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        TypeText(text, delay);
+        Console.ResetColor();
+    }
 }

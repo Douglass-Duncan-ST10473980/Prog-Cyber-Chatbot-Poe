@@ -7,7 +7,7 @@ class Program
     static void Main(string[] args)
     {
      
-        Chatbot chatbot = new Chatbot();
+        Chatbot chatbot = new Chatbot(20);
         chatbot.Start();
         
     }
